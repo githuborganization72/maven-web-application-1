@@ -21,15 +21,36 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://13.233.216.196:9980/</sonar.host.url>
+		<sonar.host.url>http://54.172.22.51:9980/</sonar.host.url>
+		<sonar.login>squ_c7bbf1cba3f796ad59fdc98458a4aded9e609d0a</sonar.login>
+		<!--
 		<sonar.login>admin</sonar.login>
-		<sonar.password>admin</sonar.password> 
+		<sonar.password>mani</sonar.password> 
+		-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 	</properties>
+	
+	<repositories>
+	
+	    <repository>
+	      <id>nexus</id>
+	      <name>Nexus Release Repo</name>
+	      <url>http://107.21.78.116:9980/mithuntechnologies/repository/group-repo-mss/</url>
+	    </repository>
 
+    </repositories>
+	
 	<dependencies>
+	
+	    
+		<dependency>
+            <groupId>com.mmk</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+		
 		
 		<dependency>
 			<groupId>org.json</groupId>
@@ -95,17 +116,18 @@
 	
 	<distributionManagement>
 	
-	    <repository>
-	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-release/</url>
-	    </repository>
-	    
+	       
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-snapshot/</url>
+	      <name>Nexus Snapshot Repo</name>
+	      <url>http://107.21.78.116:9980/mithuntechnologies/repository/wallmart-snapshot/</url>
 	    </snapshotRepository>
+		
+		<repository>
+	      <id>nexus</id>
+	      <name>Remote Repo - Mithun Technologies</name>
+	      <url>http://107.21.78.116:9980/mithuntechnologies/repository/remote-repo-mmk/</url>
+	    </repository>
 	    
 	</distributionManagement>
 	
